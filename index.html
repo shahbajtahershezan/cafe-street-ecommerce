@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Cafe Street - E Commerce Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        :root {
+            --primary-color: #2F2105;
+            --accent-color: #FF902B;
+            --light-bg: #F7EBDA;
+            --card-bg: #FFFFFF;
+            --border-color: #A49E91;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--light-bg);
+            position: relative;
+            padding-bottom: 80px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 16px;
+        }
+
+        .navbar > img {
+            width: 48px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-3 {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .input-section {
+            position: relative;
+        }
+
+        .input-section i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        .input-field {
+            width: 120px;
+            padding: 8px 12px 8px 32px;
+            border: 1px solid var(--primary-color);
+            border-radius: 12px;
+            font-size: 12px;
+            background-color: transparent;
+        }
+
+        .nav-3 img {
+            width: 24px;
+            height: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            padding: 0 16px;
+            gap: 30px;
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .hero-text h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .hero-btn {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .order-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background-color: #3d2e0a;
+        }
+
+        .order-btn img {
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .menu-btn {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background-color: rgba(47, 33, 5, 0.05);
+        }
+
+        .hero-img {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-main-img {
+            width: 280px;
+            height: auto;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            padding: 10px;
+        }
+
+        .hero-img p {
+            position: absolute;
+            background-color: white;
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .stat-one {
+            top: 30%;
+            right: 10%;
+        }
+
+        .stat-two {
+            top: 10%;
+            left: 10%;
+        }
+
+        .stat-three {
+            bottom: 20%;
+            left: 10%;
+        }
+
+        .hero-img p img {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 60px 16px;
+            background-color: var(--light-bg);
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .about-text {
+            text-align: center;
+        }
+
+        .about-text h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .get-coffee-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .get-coffee-btn:hover {
+            background-color: #e67e22;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-img {
+            width: 100%;
+            max-width: 370px;
+            height: 509px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* Special Menu Section */
+        .special-menu {
+            padding: 60px 16px;
+        }
+
+        .special-menu h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .menu-item-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background-color: white;
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .menu-item-rating img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .menu-item-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .menu-item-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-item-price {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .menu-item-add {
+            width: 28px;
+            height: 28px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item-add:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-item-add img {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Popular Section */
+        .popular {
+            padding: 60px 16px;
+            position: relative;
+        }
+
+        .popular > h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .popular-bg {
+            display: none;
+        }
+
+        .popular-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .popular-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 16px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .card-image {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .card-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card-star {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: white;
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4px 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .card-star img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .card-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-text h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .card-btn {
+            display: flex;
+            gap: 8px;
+        }
+
+        .temp-btn {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+            color: var(--accent-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .temp-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .temp-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .card-price {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-price p {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .card-price .menu-item-add {
+            width: 28px;
+            height: 28px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .card-price .menu-item-add:hover {
+            transform: scale(1.1);
+        }
+
+        .card-price .menu-item-add img {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* How-to Section */
+        .how-to {
+            padding: 60px 16px;
+            text-align: center;
+        }
+
+        .how-to h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .delivery-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .delivery-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .delivery-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 16px;
+        }
+
+        .delivery-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .delivery-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 16px;
+            background-color: var(--light-bg);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonials-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .testimonials-header p {
+            font-size: 16px;
+            color: var(--primary-color);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .testimonials-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--primary-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .testimonial-image {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .testimonial-image-placeholder {
+            width: 226.5px;
+            height: 86.23px;
+            background-color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 60px 16px;
+            background: var(--primary-color) url('assets/subscribe.png') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(47, 33, 5, 0.85);
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .newsletter p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .newsletter-input {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .newsletter-input::placeholder {
+            color: #999;
+        }
+
+        .newsletter-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Tablet Styles */
+        @media screen and (min-width: 768px) {
+            .navbar {
+                padding: 24px 40px;
+            }
+
+            .navbar > img {
+                width: 64px;
+            }
+
+            .nav-links {
+                display: flex;
+                list-style: none;
+                gap: 30px;
+            }
+
+            .nav-links li a {
+                text-decoration: none;
+                color: var(--primary-color);
+                font-weight: 500;
+                font-size: 16px;
+                transition: color 0.3s ease;
+            }
+
+            .nav-links li a:hover {
+                color: var(--accent-color);
+            }
+
+            .input-field {
+                width: 160px;
+                padding: 10px 12px 10px 36px;
+                font-size: 14px;
+            }
+
+            .input-section i {
+                font-size: 16px;
+            }
+
+            .nav-3 img {
+                width: 28px;
+            }
+
+            .hero {
+                flex-direction: row;
+                align-items: center;
+                padding: 0 40px;
+                gap: 40px;
+            }
+
+            .hero-text {
+                text-align: left;
+                flex: 1;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-btn {
+                justify-content: flex-start;
+            }
+
+            .hero-img {
+                flex: 1;
+            }
+
+            .hero-main-img {
+                width: 320px;
+            }
+
+            .stat-one {
+                right: 15%;
+            }
+
+            .stat-two {
+                left: 10%;
+            }
+
+            .stat-three {
+                left: 10%;
+            }
+
+            .about-us {
+                padding: 80px 40px;
+            }
+
+            .about-container {
+                flex-direction: row;
+                align-items: center;
+                gap: 60px;
+            }
+
+            .about-text {
+                text-align: left;
+                flex: 1;
+            }
+
+            .about-image {
+                flex: 1;
+            }
+
+            .special-menu {
+                padding: 80px 40px;
+            }
+
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .popular {
+                padding: 80px 40px;
+            }
+
+            .popular > h1 {
+                text-align: left;
+                margin-bottom: 40px;
+            }
+
+            .popular-cards {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+            .popular-card {
+                max-width: 220px;
+            }
+
+            .how-to {
+                padding: 80px 40px;
+            }
+
+            .delivery-cards {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 40px;
+            }
+
+            .delivery-card {
+                flex: 1;
+            }
+
+            .testimonials {
+                padding: 80px 40px;
+            }
+
+            .testimonials-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: stretch;
+            }
+
+            .testimonial-card {
+                flex: 1;
+            }
+
+            .newsletter {
+                padding: 80px 40px;
+            }
+
+            .newsletter-form {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .newsletter-input {
+                flex: 1;
+                max-width: 300px;
+            }
+        }
+
+        /* Desktop Styles */
+        @media screen and (min-width: 1200px) {
+            .navbar {
+                padding: 32px 135px;
+            }
+
+            .navbar > img {
+                width: 80px;
+            }
+
+            .nav-links {
+                gap: 50px;
+            }
+
+            .nav-links li a {
+                font-size: 18px;
+            }
+
+            .input-field {
+                width: 200px;
+                padding: 12px 16px 12px 40px;
+                font-size: 16px;
+            }
+
+            .input-section i {
+                font-size: 18px;
+                left: 16px;
+            }
+
+            .nav-3 img {
+                width: 32px;
+            }
+
+            .hero {
+                padding: 0 135px;
+                gap: 80px;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .hero-text p {
+                font-size: 18px;
+            }
+
+            .order-btn, .menu-btn {
+                padding: 16px 24px;
+                font-size: 16px;
+            }
+
+            .hero-main-img {
+                width: 400px;
+            }
+
+            .hero-img p {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            .stat-one {
+                right: 20%;
+            }
+
+            .stat-two {
+                left: 15%;
+            }
+
+            .stat-three {
+                left: 15%;
+            }
+
+            .about-us {
+                padding: 120px 135px;
+            }
+
+            .about-text h2 {
+                font-size: 36px;
+            }
+
+            .about-text p {
+                font-size: 18px;
+            }
+
+            .get-coffee-btn {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+
+            .special-menu {
+                padding: 120px 135px;
+            }
+
+            .special-menu h2 {
+                font-size: 36px;
+                text-align: left;
+                margin-bottom: 50px;
+            }
+
+            .menu-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            .popular {
+                padding: 120px 135px;
+            }
+
+            .popular > h1 {
+                font-size: 36px;
+                text-align: left;
+            }
+
+            .popular-cards {
+                gap: 30px;
+            }
+
+            .popular-card {
+                max-width: 280px;
+                padding: 20px;
+            }
+
+            .card-text h4 {
+                font-size: 18px;
+            }
+
+            .how-to {
+                padding: 120px 135px;
+            }
+
+            .how-to h1 {
+                font-size: 36px;
+            }
+
+            .delivery-cards {
+                gap: 80px;
+            }
+
+            .delivery-card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .delivery-card h4 {
+                font-size: 20px;
+            }
+
+            .delivery-card p {
+                font-size: 16px;
+            }
+
+            .testimonials {
+                padding: 120px 135px;
+            }
+
+            .testimonials-header h2 {
+                font-size: 36px;
+            }
+
+            .testimonials-header p {
+                font-size: 18px;
+            }
+
+            .testimonial-text {
+                font-size: 16px;
+            }
+
+            .newsletter {
+                padding: 120px 135px;
+            }
+
+            .newsletter h2 {
+                font-size: 36px;
+            }
+
+            .newsletter p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="assets/logo_coffe.jpg" alt="Cafe Street Logo" />
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Our Product</a></li>
+                    <li><a href="#">Delivery</a></li>
+                </ul>
+            </div>
+            <div class="nav-3">
+                <div class="input-section">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Cappuccino"
+                        class="input-field"
+                    />
+                </div>
+                <img src="assets/icons_cart.png" alt="cart icon" />
+            </div>
+        </nav>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>
+                    Enjoy your
+                    <span style="color: rgb(255, 145, 43)">coffee</span> <br>
+                    before your activity
+                </h1>
+                <p>
+                    Boost your productivity and build your mood with a glass
+                    of coffee in the morning
+                </p>
+                <div class="hero-btn">
+                    <button class="order-btn">
+                        Order now
+                        <img src="assets/Group.png" alt="cart image" />
+                    </button>
+                    <button class="menu-btn">More Menu</button>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img
+                    src="assets/img-hero.png"
+                    alt="Coffee cup"
+                    class="hero-main-img"
+                />
+                <p class="stat-one">
+                    4.8
+                    <img
+                        src="assets/akar-icons_star.png"
+                        alt="Star icon"
+                    />
+                </p>
+                <p class="stat-two">Cappuccino</p>
+                <p class="stat-three">18K</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="popular">
+            <h1>Popular Now</h1>
+            <div class="popular-bg">
+                <img src="assets/Rectangle 2.png" alt="Background pattern" />
+            </div>
+            <div class="popular-cards">
+                <div class="popular-card">
+                    <div class="card-image">
+                        <img
+                            src="assets/popular-card1.png"
+                            alt="Vanilla Latte coffee"
+                        />
+                        <p class="card-star">
+                            4.8
+                            <img
+                                src="assets/akar-icons_star.png"
+                                alt="Star icon"
+                            />
+                        </p>
+                    </div>
+                    <div class="card-text">
+                        <div>
+                            <h4>Vanilla Latte</h4>
+                            <div class="card-btn">
+                                <button class="temp-btn active" data-product="vanilla-latte" data-temp="hot">Hot</button>
+                                <button class="temp-btn" data-product="vanilla-latte" data-temp="cold">Cold</button>
+                            </div>
+                        </div>
+                        <div class="card-price">
+                            <p>21K</p>
+                            <div class="menu-item-add">
+                                <img src="assets/icons_cart.png" alt="Add to cart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <div class="card-image">
+                        <img
+                            src="assets/espresso.png"
+                            alt="Espresso coffee"
+                        />
+                        <p class="card-star">
+                            4.8
+                            <img
+                                src="assets/akar-icons_star.png"
+                                alt="Star icon"
+                            />
+                        </p>
+                    </div>
+                    <div class="card-text">
+                        <div>
+                            <h4>Espresso</h4>
+                            <div class="card-btn">
+                                <button class="temp-btn active" data-product="espresso" data-temp="hot">Hot</button>
+                                <button class="temp-btn" data-product="espresso" data-temp="cold">Cold</button>
+                            </div>
+                        </div>
+                        <div class="card-price">
+                            <p>12K</p>
+                            <div class="menu-item-add">
+                                <img src="assets/icons_cart.png" alt="Add to cart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-card">
+                    <div class="card-image">
+                        <img
+                            src="assets/popular-card2.png"
+                            alt="Hazelnut Latte coffee"
+                        />
+                        <p class="card-star">
+                            4.8
+                            <img
+                                src="assets/akar-icons_star.png"
+                                alt="Star icon"
+                            />
+                        </p>
+                    </div>
+                    <div class="card-text">
+                        <div>
+                            <h4>Hazelnut Latte</h4>
+                            <div class="card-btn">
+                                <button class="temp-btn active" data-product="hazelnut-latte" data-temp="hot">Hot</button>
+                                <button class="temp-btn" data-product="hazelnut-latte" data-temp="cold">Cold</button>
+                            </div>
+                        </div>
+                        <div class="card-price">
+                            <p>21K</p>
+                            <div class="menu-item-add">
+                                <img src="assets/icons_cart.png" alt="Add to cart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="how-to">
+            <h1>How to use delivery services</h1>
+            <div class="delivery-cards">
+                <div class="delivery-card">
+                    <img src="assets/coffee-cup 2.png" alt="Choose coffee icon">
+                    <h4>Choose your coffee</h4>
+                    <p>There are 20+ coffees for you</p>
+                </div>
+                <div class="delivery-card">
+                    <img src="assets/food-truck 1.png" alt="Food truck icon">
+                    <h4>We delivery it to you</h4>
+                    <p>Choose delivery service</p>
+                </div>
+                <div class="delivery-card">
+                    <img src="assets/coffee-cup 2.png" alt="Enjoy coffee icon">
+                    <h4>Enjoy your coffee</h4>
+                    <p>Choose delivery service</p>
+                </div>
+            </div>
+        </div>
+        <!-- About Us Section -->
+        <section class="about-us">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="assets/about.png" alt="About section image showing coffee preparation" class="about-img">
+                </div>
+                <div class="about-text">
+                    <h2>About us</h2>
+                    <p>We provide quality coffee, and ready to deliver.</p>
+                    <p>We are a company that makes and distributes delicious drinks, our main product is made with a secret recipe and available in stores worldwide.</p>
+                    <button class="get-coffee-btn">Get your coffee</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Menu Section -->
+        <section class="special-menu">
+            <h2>Special menu for you</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="assets/sandwich.png" alt="Sandwich with meat and vegetables" class="menu-item-img">
+                    <div class="menu-item-header">
+                        <div class="menu-item-rating">
+                            4.8 <img src="assets/akar-icons_star.png" alt="Star icon">
+                        </div>
+                        <h3 class="menu-item-name">Sandwich</h3>
+                    </div>
+                    <p class="menu-item-description">Bread with meat and vegetables</p>
+                    <div class="menu-item-footer">
+                        <span class="menu-item-price">12K</span>
+                        <div class="menu-item-add">
+                            <img src="assets/icons_cart.png" alt="Add to cart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="assets/hotmilk.png" alt="Hot milk beverage" class="menu-item-img">
+                    <div class="menu-item-header">
+                        <div class="menu-item-rating">
+                            4.8 <img src="assets/akar-icons_star.png" alt="Star icon">
+                        </div>
+                        <h3 class="menu-item-name">Hot Milk</h3>
+                    </div>
+                    <p class="menu-item-description">Hot Milk with less sugar</p>
+                    <div class="menu-item-footer">
+                        <span class="menu-item-price">12K</span>
+                        <div class="menu-item-add">
+                            <img src="assets/icons_cart.png" alt="Add to cart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="assets/cappucino.png" alt="Cappuccino coffee" class="menu-item-img">
+                    <div class="menu-item-header">
+                        <div class="menu-item-rating">
+                            4.8 <img src="assets/akar-icons_star.png" alt="Star icon">
+                        </div>
+                        <h3 class="menu-item-name">Cappucino</h3>
+                    </div>
+                    <p class="menu-item-description">Hot Cappucino</p>
+                    <div class="menu-item-footer">
+                        <span class="menu-item-price">12K</span>
+                        <div class="menu-item-add">
+                            <img src="assets/icons_cart.png" alt="Add to cart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="assets/moccacinno.png" alt="Moccacino coffee" class="menu-item-img">
+                    <div class="menu-item-header">
+                        <div class="menu-item-rating">
+                            4.8 <img src="assets/akar-icons_star.png" alt="Star icon">
+                        </div>
+                        <h3 class="menu-item-name">Moccacinno</h3>
+                    </div>
+                    <p class="menu-item-description">Hot Moccacino</p>
+                    <div class="menu-item-footer">
+                        <span class="menu-item-price">12K</span>
+                        <div class="menu-item-add">
+                            <img src="assets/icons_cart.png" alt="Add to cart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="assets/coffeicecream.png" alt="Coffee ice cream dessert" class="menu-item-img">
+                    <div class="menu-item-header">
+                        <div class="menu-item-rating">
+                            4.8 <img src="assets/akar-icons_star.png" alt="Star icon">
+                        </div>
+                        <h3 class="menu-item-name">Coffe Ice Cream</h3>
+                    </div>
+                    <p class="menu-item-description">Coffe with ice cream vanilla</p>
+                    <div class="menu-item-footer">
+                        <span class="menu-item-price">12K</span>
+                        <div class="menu-item-add">
+                            <img src="assets/icons_cart.png" alt="Add to cart">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="assets/waffle.png" alt="Waffle with ice cream" class="menu-item-img">
+                    <div class="menu-item-header">
+                        <div class="menu-item-rating">
+                            4.8 <img src="assets/akar-icons_star.png" alt="Star icon">
+                        </div>
+                        <h3 class="menu-item-name">Waffle Ice Cream</h3>
+                    </div>
+                    <p class="menu-item-description">Waffle with ice cream</p>
+                    <div class="menu-item-footer">
+                        <span class="menu-item-price">12K</span>
+                        <div class="menu-item-add">
+                            <img src="assets/icons_cart.png" alt="Add to cart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="testimonials-header">
+                <h2>What they say about us</h2>
+                <p>We always provide the best service and always maintain the quality of coffee</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I really love the cappuccino, the coffee was very smooth</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">N</div>
+                        <div class="author-info">
+                            <h4>Naura</h4>
+                            <p>Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">This coffee shop is very convenient</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>John</h4>
+                            <p>New Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The coffee menu here is very much</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Azura</h4>
+                            <p>Coffee Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Subscribe to get 50% discount price</h2>
+                <p>Stay updated with our latest offers and get exclusive discounts on your favorite coffee</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Email address" required>
+                    <button type="submit" class="newsletter-btn">Order now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
